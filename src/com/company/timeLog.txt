@@ -1,5 +1,4 @@
 Scanner
-Time of Search: 2017/10/04 18:19:29
 Total Run Time (ms): 341606
 Total Run Time (ss): 341
 Total Instances Found: 837

@@ -13,7 +13,18 @@ public class FileSearch {
            while((currentLine = br.readLine()) != null) {
                if(currentLine.toLowerCase().toString().contains(searchStr)) {
                    count++;
+                   // **** Remove comment to see each line with searchStr present ****
+
 //                   System.out.println(currentLine);
+
+                   // **** Remove comment to write all matches to matches.txt ****
+
+//                   try (BufferedWriter bw = new BufferedWriter(new FileWriter("./matches.txt", true))) {
+//                       bw.write(currentLine);
+//                       bw.newLine();
+//                   } catch (IOException e) {
+//                       e.printStackTrace();
+//                   }
                }
            }
            System.out.println("Total instances of " + searchStr + " :" + count);
