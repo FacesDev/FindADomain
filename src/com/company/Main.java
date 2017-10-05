@@ -1,34 +1,24 @@
 package com.company;
 
 import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Main {
-    private static BufferedWriter bw;
-            public static void main(String[] args) throws FileNotFoundException {
+    private static final String FILENAME = "/Users/solderedmachd/Desktop/domainSearch/src/com/company/com.";
+    private static final String SEARCHSTRING = "soteria";
+    public static void main(String[] args) throws FileNotFoundException {
+                System.out.println("Begin Search");
                 FileSearch fileSearch = new FileSearch();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 long startTime = System.currentTimeMillis();
-                fileSearch.parseFile("/Users/solderedmachd/Desktop/domainSearch/src/com/company/com.", "soteria");
+                fileSearch.parseFile(FILENAME, SEARCHSTRING);
                 long endTime   = System.currentTimeMillis();
                 long totalTime = endTime - startTime;
                 System.out.println("Run Time (ms): " + totalTime);
                 System.out.println("Run Time (ss)" + (totalTime / 1000.0));
-
-
-
-                File file = new File("/Users/solderedmachd/Desktop/domainSearch/src/com/company/timeLog.txt");
-
-                try {
-                    FileWriter fw = new FileWriter(file);
-                    bw = new BufferedWriter(fw);
-                    bw.write("Total Run Time: " + totalTime);
-//                    bw.newLine();
-                    bw.close();
-                    System.out.println("done!!");
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
+                System.out.println("Fastest Time (ss): scanner " + 105.02);
             }
 }
 
