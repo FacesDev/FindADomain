@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Main {
     private static final String FILENAME = "src/com/company/com.";
-    private static final String SEARCHSTRING = "soteria";
+    private static final String SEARCHSTRING = "Insert string to be found here";
 
     public static void main(String[] args) throws FileNotFoundException {
                 System.out.println("Begin Search");
