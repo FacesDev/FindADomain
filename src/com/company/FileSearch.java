@@ -8,17 +8,16 @@ import java.io.IOException;
 public class FileSearch {
     public Integer count = 0;
     public void parseFile(String fileName, String searchStr) throws FileNotFoundException {
-       try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+       try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
            String currentLine;
-           while((currentLine = br.readLine()) != null) {
+           while((currentLine = reader.readLine()) != null) {
+
                if(currentLine.toLowerCase().toString().contains(searchStr)) {
                    count++;
-                   // **** Remove comment to see each line with searchStr present ****
-
+                   // **** Uncomment to see each line with searchStr present ****
 //                   System.out.println(currentLine);
 
-                   // **** Remove comment to write all matches to matches.txt ****
-
+                   // **** Uncomment to write all matches to matches.txt ****
 //                   try (BufferedWriter bw = new BufferedWriter(new FileWriter("./matches.txt", true))) {
 //                       bw.write(currentLine);
 //                       bw.newLine();

@@ -4,21 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BoyerMoore {
-    public static void search(String pat, String txt) {
-        Map<Character, Integer> mt = new HashMap<Character, Integer>();
-        for (int i = 0; i < pat.length(); i++) {
-            mt.put(pat.charAt(i), i);
+    public static void search(String line, String searchStr) {
+        Map<Character, Integer> skippable = new HashMap<Character, Integer>();
+        for (int i = 0; i < line.length(); i++) {
+            skippable.put(line.charAt(i), i);
         }
         int skip = 0;
-        int N = txt.length();
-        int M = pat.length();
+        int N = searchStr.length();
+        int M = line.length();
         for (int i = 0; i <= N - M; i = i + skip) {
 
             skip = 0;
             for (int j = M - 1; j >= 0; j--) {
-                if (pat.charAt(j) != txt.charAt(i + j)) {
-                    if (mt.get(txt.charAt(i + j)) != null) {
-                        skip = Math.max(1, j - mt.get(txt.charAt(i + j)));
+                if (line.charAt(j) != searchStr.charAt(i + j)) {
+                    if (skippable.get(searchStr.charAt(i + j)) != null) {
+                        skip = Math.max(1, j - skippable.get(searchStr.charAt(i + j)));
                         System.out.println("skip " + skip);
                     } else
                         skip = j + 1;
